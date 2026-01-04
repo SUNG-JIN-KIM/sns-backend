@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sns_db
+    username: sns_user
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+
+jwt:
+  secret: "this_is_very_secret_key_change_it_please_123456"  # 32바이트 이상 랜덤 문자열
+  access-token-validity-in-seconds: 3600
